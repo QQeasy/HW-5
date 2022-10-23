@@ -3,19 +3,32 @@
 выводит третью цифру заданного числа или 
 сообщает, что третьей цифры нет.
 */ 
-Console.WriteLine("Введите трехзначное число:");
-int num1 = Convert.ToInt32(Console.ReadLine());
-SecondNum(num1);
+int num1 = ReadInt("Введите число:");
 
-void SecondNum(int number1)
+ThirdNumber(num1);
+
+// Нахождение третьего числа
+void ThirdNumber(int number1)
 {
-    if (number1/100>=1 && number1/100<=9)
+    if (number1>=100)
     {
+        while (number1 > 1000) //поиск первых трех чисел
+        {
+            number1 = number1/10 ;
+        }
         int result = number1%10;
-        Console.WriteLine("Число " + result + " - разряд единиц числа " + num1);
+        Console.WriteLine(result + " - третья цифра числа " + num1);
+
     }
     else
     {
-        Console.WriteLine("Число " + num1 + " не является трехзначным!");
+        Console.WriteLine("Число " + number1 + " не имеет третьего числа!");
     }
+}
+
+// Ввод
+int ReadInt(string massege)
+{
+    Console.Write(massege);
+    return Convert.ToInt32(Console.ReadLine());
 }
