@@ -6,11 +6,11 @@
 */ 
 int num1 = ReadInt("Введите число:");
 
-ThirdNumber(num1);
+Palindrome(num1);
 
 
 // Проверим, является ли число палиндромом
-void ThirdNumber(int number1)
+void Palindrome(int number1)
 {
     int FirstNum = number1/10000;
     int SecondNum = number1/1000%10;

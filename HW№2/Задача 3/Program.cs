@@ -1,9 +1,4 @@
-﻿/*
-Задача 15: Напишите программу, которая принимает на
-вход цифру, обозначающую день недели, и проверяет, 
-является ли этот день выходным.
-*/ 
-int num1 = ReadInt("Введите порядковый номер дня недели:");
+﻿int num1 = ReadInt("Введите порядковый номер дня недели:");
 
 Weekend(num1);
 
@@ -27,3 +22,4 @@ int ReadInt(string massege)
     Console.Write(massege);
     return Convert.ToInt32(Console.ReadLine());
 }
+
