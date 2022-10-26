@@ -24,7 +24,6 @@ void Length3D(int X1, int X2, int Y1, int Y2, int Z1, int Z2)
     double Z = Math.Pow((Z2 - Z1),2);
     double res = X + Y + Z;
     double Length = Math.Sqrt((res));
-    Console.WriteLine(X +""+ Y+"" + Z);
     Console.Write(Length + " - это расстояние между указанными точками в 3D пространстве");
 }
 
