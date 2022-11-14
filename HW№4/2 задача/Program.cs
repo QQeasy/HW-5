@@ -6,20 +6,21 @@
 82 -> 10
 
 9012 -> 12*/
-int Num1 = ReadInt("Введите число, состав цифр которого хотите просуммировать: ");
-SummNum(Num1);
+SummNum();
 
 //Выводит сумму чисел, составляющих число
-int SummNum(int Num);
+void SummNum()
 {
-   
-    while (Num>=10)
+    int Num1 = ReadInt("Введите число, состав цифр которого хотите просуммировать: ");
+    int QuantityNum = 0;
+    int Num = Num1;
+    while (Num>1)
     {
-        int NUM = Num%10;
+        int IntermediateNum = Num%10;
+        QuantityNum += IntermediateNum;
         Num = Num/10;
-        int QuantityNum = QuantityNum + NUM;
-        Console.Write("Сумма цифр в числе " + Num1 + " равна " + QuantityNum);
     }
+    Console.Write("Сумма цифр в числе " + Num1 + " равна " + QuantityNum);
 }
 
 
