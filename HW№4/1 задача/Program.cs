@@ -6,10 +6,18 @@
 
 2, 4 -> 16 */
 
-int Num1 = ReadInt("Введите число, которое хотите возвести в степень: ");
-int degree = ReadInt("Введите степень: ");
-double Num = Math.Pow(Num1,degree);
-Console.WriteLine("Число "+ Num1 + " в степени " + degree + " это "+ Num);
+PowMath();
+void PowMath()
+{
+    int Num1 = ReadInt("Введите число, которое хотите возвести в степень: ");
+    int degree = ReadInt("Введите степень: ");
+    int N1 = Num1;
+    for (int i=1; i<=degree-1; i++)
+    {
+        N1 *= Num1;
+    }
+    Console.WriteLine("Число "+ Num1 + " в степени " + degree + " - это "+ N1);
+}
 
 
 // Ввод
