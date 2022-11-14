@@ -12,15 +12,15 @@ SummNum();
 void SummNum()
 {
     int Num1 = ReadInt("Введите число, состав цифр которого хотите просуммировать: ");
-    int QuantityNum = 0;
+    int SumNum = 0;
     int Num = Num1;
     while (Num>1)
     {
         int IntermediateNum = Num%10;
-        QuantityNum += IntermediateNum;
+        SumNum += IntermediateNum;
         Num = Num/10;
     }
-    Console.Write("Сумма цифр в числе " + Num1 + " равна " + QuantityNum);
+    Console.Write("Сумма цифр в числе " + Num1 + " равна " + SumNum);
 }
 
 
