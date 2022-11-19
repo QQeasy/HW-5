@@ -7,37 +7,45 @@
 */
 int size = ReadInt("Введите число элементов массива: ");
 
-Console.WriteLine("Ваш новый случайный массив: ");
+int[] arrey = new int[size];
 
 ArreyAdd(size);
-ArreyPrint(ArreyAdd(size));
+Console.WriteLine();
+
+Console.WriteLine("Ваш новый случайный массив: ");
+
+ArreyPrint(arrey);
+Console.WriteLine();
 
 Console.WriteLine("Число четных чисел в массиве: ");
 
-ArreySumDouble(ArreyAdd(size));
+ArreySumDouble(arrey);
+Console.WriteLine();
+
+
+
+
 
 //Задаёт массив из N чисел
 
 int[] ArreyAdd(int N)
 {
-    int[] arrey = new int[N];
     for (int i = 0; i < N; i++)
     {
-        arrey[i] = new Random().Next(100,999);
+        arrey[i] = new Random().Next(100,1000);
     }
     return arrey;
 }
 
 
 // Выводит массив
-int[] ArreyPrint(int[] arrey1)
+void ArreyPrint(int[] arrey1)
 {   Console.Write("[ ");
     for (int i = 0; i < arrey1.Length; i++)
     {
         Console.Write(arrey1[i] + " ");
     }
     Console.WriteLine("]");
-    
 }
 
 
