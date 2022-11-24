@@ -4,13 +4,14 @@
 Найдите разницу между максимальным и минимальным 
 значениями элементов массива.
 [3 7 22 2 78] -> 76
-
+int
 
 */
-int size = ReadInt("Введите число элементов массива: ");
+int size = ReadDouble("Введите число элементов массива: ");
 
-int[] arrey = new int[size];
-
+double[] arrey = new double[size];
+double MaxNArrey = 0;
+double MinNArrey = 0;
 
 ArreyAdd(size);
 Console.WriteLine();
@@ -20,16 +21,19 @@ Console.WriteLine("Ваш новый случайный массив: ");
 ArreyPrint(arrey);
 Console.WriteLine();
 
-ArreySumOddNum(arrey);
+MaxArreyN(arrey, MaxNArrey);
+Console.WriteLine("Максимальный элемент массива: " + MaxNArrey);
+Console.WriteLine();
 
-
+MinArreyN(arrey, MinNArrey);
+Console.WriteLine("Минимальный элемент массива: " + MinNArrey);
 Console.WriteLine();
 
 
 
 //Задаёт массив из N чисел
 
-int[] ArreyAdd(int N)
+double[] ArreyAdd(double N)
 {
     for (int i = 0; i < N; i++)
     {
@@ -40,7 +44,7 @@ int[] ArreyAdd(int N)
 
 
 // Выводит массив
-void ArreyPrint(int[] arrey1)
+void ArreyPrint(double[] arrey1)
 {   Console.Write("[ ");
     for (int i = 0; i < arrey1.Length; i++)
     {
@@ -66,9 +70,9 @@ void ArreySumDouble(int[] arrey2)
 }
 
 // Суммирует все элементы массива, стоящие на нечётных позициях.
-void ArreySumOddNum(int[] arrey2)
+void ArreySumOddNum(double[] arrey2)
 {
-    int Sum1 = 0;
+    double Sum1 = 0;
     for (int i = 1; i < arrey2.Length; i+=2)
     {
        Sum1 += arrey2[i];
@@ -76,8 +80,41 @@ void ArreySumOddNum(int[] arrey2)
     Console.WriteLine("Сумма элементов, стоящих на нечётных позициях: " + Sum1);
 }
 
+// Поиск максимального значения в массиве
+double MaxArreyN(double[] arrey3, double MaxNumArrey = arrey3[0])
+{
+    for (int i = 1; i<arrey3.Length; i++)
+    {
+        if (MaxNumArrey<arrey3[i])
+        {
+            MaxNumArrey = arrey3[i];
+        }
+    }
+    return MaxNumArrey;
+}
+
+// Поиск минимального значения в массиве 
+double MinArreyN(double[] arrey4, double MinNumArrey = arrey4[0])
+{
+    for (int i = 1; i<arrey4.Length; i++)
+    {
+        if (MinNumArrey>arrey4[i])
+        {
+            MinNumArrey = arrey4[i];
+        }
+    }
+    return MinNumArrey;
+}
+
+// Находит разность между максимальным и минимальным элементом массива
+double DiffMinMaxN(double MinNum, double MaxNum, double DiffN )
+{
+    DiffN = MaxNum - MinNum;
+    return DiffN;
+    
+}
 // Ввод
-int ReadInt(string massege)
+int ReadDouble(string massege)
 {
     Console.Write(massege);
     return Convert.ToInt32(Console.ReadLine());
