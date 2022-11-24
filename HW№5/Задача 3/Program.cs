@@ -4,30 +4,43 @@
 Найдите разницу между максимальным и минимальным 
 значениями элементов массива.
 [3 7 22 2 78] -> 76
-int
 
 */
+
 int size = ReadDouble("Введите число элементов массива: ");
 
-double[] arrey = new double[size];
-double MaxNArrey = 0;
-double MinNArrey = 0;
 
-ArreyAdd(size);
+double[] arrey = new double[size];
+
+
+ArreyAdd(size);                                                                                                     //Создаёт массив
 Console.WriteLine();
+
 
 Console.WriteLine("Ваш новый случайный массив: ");
 
-ArreyPrint(arrey);
+
+ArreyPrint(arrey);                                                                                                  //Печать массива
 Console.WriteLine();
 
-MaxArreyN(arrey, MaxNArrey);
+
+double MaxNArrey = 1;
+MaxNArrey = MaxArreyN(arrey, MaxNArrey);                                                                            //Поиск мах элемента
+Console.WriteLine();
 Console.WriteLine("Максимальный элемент массива: " + MaxNArrey);
-Console.WriteLine();
 
-MinArreyN(arrey, MinNArrey);
-Console.WriteLine("Минимальный элемент массива: " + MinNArrey);
+
+double MinNArrey = 1;
+MinNArrey = MinArreyN(arrey, MinNArrey);                                                                            //Поиск мин элемента
 Console.WriteLine();
+Console.WriteLine("Минимальный элемент массива: " + MinNArrey);
+
+
+double DiffArreyNum = 0;                                                                                            //Поиск разности мах-мин элемента
+DiffArreyNum = DiffMinMaxN(MaxNArrey,MinNArrey);
+Console.WriteLine();
+Console.WriteLine("Разность максимального и минимального элемента массива: " + DiffArreyNum);
+
 
 
 
@@ -69,6 +82,9 @@ void ArreySumDouble(int[] arrey2)
     Console.WriteLine(SumArrey2 + " - число четных чисел в массиве ");
 }
 
+
+
+
 // Суммирует все элементы массива, стоящие на нечётных позициях.
 void ArreySumOddNum(double[] arrey2)
 {
@@ -80,9 +96,13 @@ void ArreySumOddNum(double[] arrey2)
     Console.WriteLine("Сумма элементов, стоящих на нечётных позициях: " + Sum1);
 }
 
+
+
+
 // Поиск максимального значения в массиве
-double MaxArreyN(double[] arrey3, double MaxNumArrey = arrey3[0])
+double MaxArreyN(double[] arrey3, double MaxNumArrey = 0)
 {
+    MaxNumArrey = arrey3[0];
     for (int i = 1; i<arrey3.Length; i++)
     {
         if (MaxNumArrey<arrey3[i])
@@ -93,9 +113,13 @@ double MaxArreyN(double[] arrey3, double MaxNumArrey = arrey3[0])
     return MaxNumArrey;
 }
 
+
+
+
 // Поиск минимального значения в массиве 
-double MinArreyN(double[] arrey4, double MinNumArrey = arrey4[0])
+double MinArreyN(double[] arrey4, double MinNumArrey = 0)
 {
+    MinNumArrey = arrey4[0];
     for (int i = 1; i<arrey4.Length; i++)
     {
         if (MinNumArrey>arrey4[i])
@@ -106,13 +130,18 @@ double MinArreyN(double[] arrey4, double MinNumArrey = arrey4[0])
     return MinNumArrey;
 }
 
+
+
+
 // Находит разность между максимальным и минимальным элементом массива
-double DiffMinMaxN(double MinNum, double MaxNum, double DiffN )
+double DiffMinMaxN(double MaxNum, double MinNum)
 {
-    DiffN = MaxNum - MinNum;
+    double DiffN = MaxNum - MinNum;
     return DiffN;
-    
 }
+
+
+
 // Ввод
 int ReadDouble(string massege)
 {
